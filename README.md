@@ -28,6 +28,18 @@
  
 ## Experiments
 
+Executing `1_LLM_Simplification.ipynb` should create a dataset `candidates_simplified_cutoff` in the current folder.
+
+It can be used as a candidate set for running the full SympTEMIST entity linking pipeline with a trainable re-ranker.
+The BERT checkpoint can also be adapted.
+
 `cd xmen/benchmarks`
 
-`python run_benchmark.py benchmark=symptemist output=~/scratch/xmen`
+### Without Simplification
+
+`python run_benchmark.py benchmark=symptemist output=<output_folder>`
+
+### With Simplification
+
+### With Simplification and other BERT checkpoint
+
