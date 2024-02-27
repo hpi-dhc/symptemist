@@ -42,7 +42,7 @@ The BERT checkpoint for initializing the cross-encoder can also be adapted.
 
 `python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff`
 
-### With Simplification and other BERT checkpoint
+### With Simplification and Alternative BERT Checkpoint
 
 (e.g. for `PlanTL-GOB-ES/roberta-base-bne`)
 
