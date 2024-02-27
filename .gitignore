@@ -1,5 +1,7 @@
 wandb/**
 output/**
+**/*.arrow
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
