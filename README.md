@@ -10,7 +10,7 @@
 
     `poetry install`
 
-2. Get latest version of SympTEMIST gazetteer from Zenodo (https://zenodo.org/records/10635215) and put into `xmen/local_files`
+2. Get latest version of SympTEMIST gazetteer from Zenodo (https://zenodo.org/records/10635215) and put the TSV into `xmen/local_files`
 
 3. Prepare KB and indicies for candidate generation:
 
@@ -19,7 +19,7 @@
     `xmen dict benchmarks/benchmark/symptemist.yaml --all`
 
 
-## Notebooks:
+## Notebooks
 
 |Notebook|Description|
 |---|---|
@@ -28,18 +28,21 @@
  
 ## Experiments
 
-Executing `1_LLM_Simplification.ipynb` should create a dataset `candidates_simplified_cutoff` in the current folder.
-
-It can be used as a candidate set for running the full SympTEMIST entity linking pipeline with a trainable re-ranker.
-The BERT checkpoint can also be adapted.
+Executing `1_LLM_Simplification.ipynb` results in a dataset of candidates based on simplified mentions (`candidates_simplified_cutoff`) in the current folder. It can be used as a candidate set for running the full SympTEMIST entity linking pipeline with a trainable re-ranker.
+The BERT checkpoint for initializing the cross-encoder can also be adapted.
 
 `cd xmen/benchmarks`
 
 ### Without Simplification
 
-`python run_benchmark.py benchmark=symptemist output=<output_folder>`
+`python run_benchmark.py benchmark=symptemist output=./training`
 
-### With Simplification
+### With Simplification (Pre-Processed Candidates)
+
+`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff`
 
 ### With Simplification and other BERT checkpoint
 
+(e.g. for `PlanTL-GOB-ES/roberta-base-bne`)
+
+`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff +linker.reranking.training.model_name=PlanTL-GOB-ES/roberta-base-bne`
