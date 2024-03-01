@@ -46,4 +46,4 @@ The BERT checkpoint for initializing the cross-encoder can also be adapted.
 
 (e.g. for `PlanTL-GOB-ES/roberta-base-bne`)
 
-`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff +linker.reranking.training.model_name=PlanTL-GOB-ES/roberta-base-bne`
+`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff linker.reranking.training.model_name=PlanTL-GOB-ES/roberta-base-bne`
