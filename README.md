@@ -29,7 +29,7 @@
  
 ## Experiments
 
-Executing `1_LLM_Simplification.ipynb` results in a dataset of candidates based on simplified mentions (`candidates_simplified_cutoff`) in the current folder. It can be used as a candidate set for running the full SympTEMIST entity linking pipeline with a trainable re-ranker.
+Executing `1_LLM_Simplification.ipynb` results in a dataset of candidates based on simplified mentions (`symptemist_candidates_simplified_cutoff`) in the current folder. It can be used as a candidate set for running the full SympTEMIST entity linking pipeline with a trainable re-ranker.
 The BERT checkpoint for initializing the cross-encoder can also be adapted.
 
 `cd xmen/benchmarks`
@@ -40,10 +40,10 @@ The BERT checkpoint for initializing the cross-encoder can also be adapted.
 
 ### With Simplification (Pre-Processed Candidates)
 
-`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff`
+`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/symptemist_candidates_simplified_cutoff`
 
 ### With Simplification and Alternative BERT Checkpoint
 
 (e.g. for `PlanTL-GOB-ES/roberta-base-bne`)
 
-`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/candidates_simplified_cutoff linker.reranking.training.model_name=PlanTL-GOB-ES/roberta-base-bne`
+`python run_benchmark.py benchmark=symptemist output=./training +candidates_path=../../symptemist/symptemist_candidates_simplified_cutoff linker.reranking.training.model_name=PlanTL-GOB-ES/roberta-base-bne`
