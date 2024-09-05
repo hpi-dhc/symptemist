@@ -2,7 +2,7 @@
 
 ## Preparation
 
-1. Clone xMEN repository to obtain dataloaders and benchmark script:
+1. Clone xMEN repository (https://github.com/hpi-dhc/xmen) to obtain dataloaders and benchmark script:
 
     ```
     git clone https://github.com/hpi-dhc/xmen
